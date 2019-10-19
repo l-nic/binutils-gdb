@@ -2441,16 +2441,6 @@ DECLARE_CSR(mhpmcounter29h, CSR_MHPMCOUNTER29H)
 DECLARE_CSR(mhpmcounter30h, CSR_MHPMCOUNTER30H)
 DECLARE_CSR(mhpmcounter31h, CSR_MHPMCOUNTER31H)
 #endif
-#ifdef DECLARE_CSR_ALIAS
-/* Ubadaddr is 0x043 in 1.9.1, but 0x043 is utval in 1.10.  */
-DECLARE_CSR_ALIAS(ubadaddr, CSR_UTVAL)
-/* Sbadaddr is 0x143 in 1.9.1, but 0x143 is stval in 1.10.  */
-DECLARE_CSR_ALIAS(sbadaddr, CSR_STVAL)
-/* Sptbr is 0x180 in 1.9.1, but 0x180 is satp in 1.10.  */
-DECLARE_CSR_ALIAS(sptbr, CSR_SATP)
-/* Mbadaddr is 0x343 in 1.9.1, but 0x343 is mtval in 1.10.  */
-DECLARE_CSR_ALIAS(mbadaddr, CSR_MTVAL)
-#endif
 #ifdef DECLARE_CAUSE
 DECLARE_CAUSE("misaligned fetch", CAUSE_MISALIGNED_FETCH)
 DECLARE_CAUSE("fetch access", CAUSE_FETCH_ACCESS)
@@ -2468,3 +2458,14 @@ DECLARE_CAUSE("fetch page fault", CAUSE_FETCH_PAGE_FAULT)
 DECLARE_CAUSE("load page fault", CAUSE_LOAD_PAGE_FAULT)
 DECLARE_CAUSE("store page fault", CAUSE_STORE_PAGE_FAULT)
 #endif
+#ifdef DECLARE_CSR_ALIAS
+/* Ubadaddr is 0x043 in 1.9.1, but 0x043 is utval in 1.10.  */
+DECLARE_CSR_ALIAS(ubadaddr, CSR_UTVAL)
+/* Sbadaddr is 0x143 in 1.9.1, but 0x143 is stval in 1.10.  */
+DECLARE_CSR_ALIAS(sbadaddr, CSR_STVAL)
+/* Sptbr is 0x180 in 1.9.1, but 0x180 is satp in 1.10.  */
+DECLARE_CSR_ALIAS(sptbr, CSR_SATP)
+/* Mbadaddr is 0x343 in 1.9.1, but 0x343 is mtval in 1.10.  */
+DECLARE_CSR_ALIAS(mbadaddr, CSR_MTVAL)
+#endif
+
